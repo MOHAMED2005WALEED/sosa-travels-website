@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sosa Travels & Tours - Discover Paradise in Sri Lanka 🌴</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Italiana&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --tropical-green: #00A86B;
+            --ocean-blue: #0077BE;
+            --sunset-orange: #FF6B35;
+            --golden-sand: #FFD700;
+            --palm-green: #2E7D32;
+            --white: #FFFFFF;
+            --cream: #FFF8E7;
+            --dark: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: var(--cream);
+        }
+
+        /* Animated Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-family: 'Italiana', serif;
+            font-size: 1.8rem;
+            color: var(--tropical-green);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--sunset-orange);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover {
+            color: var(--sunset-orange);
+        }
+
+        /* Hero Section - Full Screen Paradise */
+        .hero-section {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(rgba(0, 168, 107, 0.7), rgba(0, 119, 190, 0.7)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+            animation: backgroundFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes backgroundFloat {
+            0%, 100% { transform: scale(1) translateY(0); }
+            50% { transform: scale(1.05) translateY(-20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.2);
+            border: 2px solid var(--golden-sand);
+            color: var(--golden-sand);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            font-family: 'Italiana', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .btn-hero {
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-hero:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: var(--sunset-orange);
+            color: white;
+            box-shadow: 0 10px 40px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(255, 107, 53, 0.6);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--tropical-green);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(255, 255, 255, 0.5);
+        }
+
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .icon {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.3;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .icon:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+        .icon:nth-child(2) { right: 15%; top: 30%; animation-delay: 2s; }
+        .icon:nth-child(3) { left: 20%; bottom: 25%; animation-delay: 4s; }
+        .icon:nth-child(4) { right: 10%; bottom: 20%; animation-delay: 1s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        /* Why Choose Us - Animated Cards */
+        .why-choose {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, var(--cream) 0%, #ffffff 100%);
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--tropical-green);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-family: 'Italiana', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 25px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.08);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 168, 107, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0,168,107,0.2);
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .feature-card:hover .feature-icon {
+            animation: spin 0.8s ease-in-out;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.2); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: var(--tropical-green);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        /* Destinations Showcase */
+        .destinations {
+            padding: 8rem 2rem;
+            background: linear-gradient(180deg, #ffffff 0%, var(--cream) 100%);
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+        }
+
+        .destination-card {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            height: 450px;
+            cursor: pointer;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            transition: all 0.5s ease;
+        }
+
+        .destination-card:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+        }
+
+        .destination-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .destination-card:hover .destination-image {
+            transform: scale(1.15);
+        }
+
+        .destination-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 2.5rem;
+            color: white;
+            transform: translateY(0);
+            transition: all 0.5s ease;
+        }
+
+        .destination-card:hover .destination-overlay {
+            background: linear-gradient(to top, rgba(0,168,107,0.95), rgba(0,168,107,0.7));
+        }
+
+        .destination-tag {
+            display: inline-block;
+            background: var(--sunset-orange);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .destination-name {
+            font-family: 'Italiana', serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .destination-description {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Vehicle Showcase with Animation */
+        .vehicle-section {
+            padding: 8rem 2rem;
+            background: var(--tropical-green);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vehicle-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .vehicle-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .vehicle-image-wrapper {
+            position: relative;
+            animation: floatVehicle 3s ease-in-out infinite;
+        }
+
+        @keyframes floatVehicle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .vehicle-image-wrapper img {
+            width: 100%;
+            border-radius: 25px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            transition: transform 0.5s ease;
+        }
+
+        .vehicle-image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        .vehicle-content h2 {
+            font-family: 'Italiana', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .vehicle-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .vehicle-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .vehicle-features li {
+            padding: 1rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .vehicle-features li:hover {
+            padding-left: 3rem;
+            color: var(--golden-sand);
+        }
+
+        .vehicle-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--golden-sand);
+            font-weight: bold;
+            font-size: 1.5rem;
+            animation: checkPop 0.6s ease;
+        }
+
+        @keyframes checkPop {
+            0% { transform: scale(0) rotate(-180deg); }
+            50% { transform: scale(1.3) rotate(10deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        /* Testimonials with Stars */
+        .testimonials {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .stars {
+            color: var(--golden-sand);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-flag {
+            font-size: 2rem;
+        }
+
+        .author-info h4 {
+            color: var(--tropical-green);
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .author-info p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, var(--sunset-orange) 0%, #ff8c61 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '🌴';
+            position: absolute;
+            font-size: 20rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            font-family: 'Italiana', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .contact-methods {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .contact-box {
+            background: white;
+            color: var(--dark);
+            padding: 2rem 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .contact-box:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+        }
+
+        .contact-box .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-box h3 {
+            color: var(--tropical-green);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-box a {
+            color: var(--sunset-orange);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Italiana', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--golden-sand);
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--sunset-orange);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .vehicle-container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-hero {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .destinations-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">🌴 Sosa Travels</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#vehicle">Our Vehicle</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-background"></div>
+        <div class="floating-icons">
+            <div class="icon">🏝️</div>
+            <div class="icon">🐘</div>
+            <div class="icon">🌊</div>
+            <div class="icon">🥥</div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">✨ Experience Paradise Since 2011 ✨</div>
+            <h1 class="hero-title">Discover the Magic of Sri Lanka</h1>
+            <p class="hero-subtitle">Unforgettable adventures, pristine beaches, and ancient wonders await you in the Pearl of the Indian Ocean 🌴</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-hero btn-primary">
+                    📞 Book Your Adventure
+                </a>
+                <a href="#destinations" class="btn-hero btn-secondary">
+                    🗺️ Explore Destinations
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="section-header fade-in">
+            <div class="section-badge">Why Choose Sosa Travels</div>
+            <h2 class="section-title">Your Journey, Our Passion</h2>
+            <p class="section-description">Experience Sri Lanka like never before with our premium services and local expertise</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🎯</div>
+                <h3>14+ Years Experience</h3>
+                <p>Since 2011, we've been crafting unforgettable Sri Lankan adventures for travelers from around the world.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🚐</div>
+                <h3>Comfortable Transport</h3>
+                <p>Travel in style with our well-maintained, air-conditioned mini vans perfect for families and groups.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">👨‍✈️</div>
+                <h3>Expert Local Guides</h3>
+                <p>Our experienced drivers know every hidden gem and secret spot to make your journey truly special.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">⭐</div>
+                <h3>5-Star Reviews</h3>
+                <p>Join hundreds of happy travelers who've experienced the best of Sri Lanka with us.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">💰</div>
+                <h3>Best Value Guaranteed</h3>
+                <p>Premium service at competitive prices with no hidden fees. What you see is what you get!</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">📞</div>
+                <h3>24/7 Support</h3>
+                <p>We're always here for you, day or night. Your comfort and safety are our top priorities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations -->
+    <section id="destinations" class="destinations">
+        <div class="section-header fade-in">
+            <div class="section-badge">Popular Destinations</div>
+            <h2 class="section-title">Explore Paradise</h2>
+            <p class="section-description">From wildlife safaris to pristine beaches, discover the wonders of Sri Lanka</p>
+        </div>
+        <div class="destinations-grid">
+            <div class="destination-card fade-in">
+                <img src="/mnt/user-data/uploads/1000498641.jpg" alt="Yala National Park" class="destination-image">
+                <div class="destination-overlay">
+                    <div class="destination-tag">Wildlife Safari</div>
+                    <h3 class="destination-name">Yala National Park</h3>
+                    <p class="destination-description">Spot leopards, elephants, and exotic birds in Sri Lanka's most famous national park.</p>
+                </div>
+            </div>
+            <div class="destination-card fade-in">
+                <img src="/mnt/user-data/uploads/1000498651.jpg" alt="Udawalawa" class="destination-image">
+                <div class="destination-overlay">
+                    <div class="destination-tag">Elephant Safari</div>
+                    <h3 class="destination-name">Udawalawa National Park</h3>
+                    <p class="destination-description">Get up close with majestic elephants in their natural habitat.</p>
+                </div>
+            </div>
+            <div class="destination-card fade-in">
+                <img src="/mnt/user-data/uploads/1000498639.jpg" alt="Mirissa" class="destination-image">
+                <div class="destination-overlay">
+                    <div class="destination-tag">Beach Paradise</div>
+                    <h3 class="destination-name">Mirissa Beach</h3>
+                    <p class="destination-description">Watch blue whales and dolphins in the crystal-clear waters of Mirissa.</p>
+                </div>
+            </div>
+            <div class="destination-card fade-in">
+                <img src="/mnt/user-data/uploads/1000498653.jpg" alt="Nine Arches" class="destination-image">
+                <div class="destination-overlay">
+                    <div class="destination-tag">Historical Site</div>
+                    <h3 class="destination-name">Nine Arches Bridge</h3>
+                    <p class="destination-description">Marvel at this architectural masterpiece nestled in lush green tea plantations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicle Showcase -->
+    <section id="vehicle" class="vehicle-section">
+        <div class="vehicle-container">
+            <div class="vehicle-image-wrapper fade-in">
+                <img src="/mnt/user-data/uploads/1000498629.png" alt="Suzuki Every Mini Van">
+            </div>
+            <div class="vehicle-content fade-in">
+                <h2>Travel in Comfort & Style</h2>
+                <p>Our premium Suzuki Every mini vans are your home away from home as you explore Sri Lanka's wonders.</p>
+                <ul class="vehicle-features">
+                    <li>Spacious seating for up to 7 passengers</li>
+                    <li>Full air-conditioning for tropical comfort</li>
+                    <li>Professional, English-speaking drivers</li>
+                    <li>Immaculately clean and well-maintained</li>
+                    <li>GPS-enabled for smooth navigation</li>
+                    <li>Complimentary WiFi on board</li>
+                    <li>Child seats available on request</li>
+                    <li>Luggage space for all your belongings</li>
+                </ul>
+                <a href="#contact" class="btn-hero btn-primary">Reserve Your Ride Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="section-header fade-in">
+            <div class="section-badge">What Travelers Say</div>
+            <h2 class="section-title">Real Stories, Real Experiences</h2>
+            <p class="section-description">Don't just take our word for it - hear from our happy travelers!</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card fade-in">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Amazing 2-day trip with Sosan! Visited Ramboda Falls and Yala National Park. The driver was professional and the van was spotless. Highly recommend!"</p>
+                <div class="testimonial-author">
+                    <div class="author-flag">🇷🇺</div>
+                    <div class="author-info">
+                        <h4>Russian Family</h4>
+                        <p>2 Nights 3 Days Tour</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Many thanks to the driver and guide Sinan for the unforgettable 2-day trip around Sri Lanka. Everything was organized comfortably and beautifully!"</p>
+                <div class="testimonial-author">
+                    <div class="author-flag">🇸🇪</div>
+                    <div class="author-info">
+                        <h4>Ella Family - Sweden</h4>
+                        <p>Nine Arches Bridge Tour</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Best whale watching experience in Mirissa! The early morning pickup was on time and our guide knew exactly where to take us. Saw multiple whales!"</p>
+                <div class="testimonial-author">
+                    <div class="author-flag">🌍</div>
+                    <div class="author-info">
+                        <h4>International Traveler</h4>
+                        <p>Whale Watching Tour</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="cta-content">
+            <h2>Ready for Your Sri Lankan Adventure?</h2>
+            <p>Book now and start creating memories that will last a lifetime! 🌴</p>
+            <div class="contact-methods">
+                <div class="contact-box">
+                    <div class="icon">📞</div>
+                    <h3>Call Us Now</h3>
+                    <a href="tel:+94776284964">+94 77 628 4964</a>
+                </div>
+                <div class="contact-box">
+                    <div class="icon">💬</div>
+                    <h3>WhatsApp</h3>
+                    <a href="https://wa.me/94776284964">Chat with Us</a>
+                </div>
+                <div class="contact-box">
+                    <div class="icon">📱</div>
+                    <h3>Facebook</h3>
+                    <a href="https://www.facebook.com/share/1DoAMSaK2A/" target="_blank">Message Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sosa Travels & Tours</h3>
+                <p>Your trusted partner for unforgettable Sri Lankan adventures since 2011. Experience the Pearl of the Indian Ocean with comfort and style.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#destinations">Destinations</a>
+                <a href="#vehicle">Our Vehicle</a>
+                <a href="#testimonials">Reviews</a>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="#destinations">Island Tours</a>
+                <a href="#contact">Airport Transfers</a>
+                <a href="#vehicle">Vehicle Hire</a>
+                <a href="#contact">Custom Itineraries</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📍 125/16 A H.K Edmond Mawatha</p>
+                <p>Galle, Sri Lanka, 80000</p>
+                <p>📞 +94 77 628 4964</p>
+                <p>⏰ Available 24/7</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sosa Travels and Tours. All Rights Reserved. | Proudly Serving Travelers Since 2011 🌴</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header Scroll Effect
+        let lastScroll = 0;
+        const header = document.querySelector('.header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.padding = '0.5rem 0';
+                header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.15)';
+            } else {
+                header.style.padding = '1rem 0';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Add animation delays to cards
+        document.querySelectorAll('.feature-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        document.querySelectorAll('.destination-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.15}s`;
+        });
+
+        document.querySelectorAll('.testimonial-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+    </script>
+</body>
+</html>
